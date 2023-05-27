@@ -465,6 +465,7 @@ ehthumbs_vista.db
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+/Users/haak7/Redstore-app/API/appsettings.Development.json
 
 # Windows Installer files
 *.cab
