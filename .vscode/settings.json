@@ -1,2 +1,9 @@
 {
+    "debug.javascript.resourceRequestOptions": {
+    
+    },
+    "debug.javascript.defaultRuntimeExecutable": {
+    
+        "pwa-node": "node"
+    }
 }
