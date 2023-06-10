@@ -1,6 +1,5 @@
-import types from '@emotion/styled'
 import { FormGroup, FormControlLabel, Checkbox } from '@mui/material'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 interface Props {
     items: string[];
