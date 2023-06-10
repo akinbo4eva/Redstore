@@ -9,6 +9,7 @@ interface basketState {
 
 const initialState: basketState = {
     basket: null,
+    
     status: 'idle'
 }
 

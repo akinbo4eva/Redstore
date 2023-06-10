@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Container, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import Header from './Header';
 import { Outlet } from 'react-router-dom';
@@ -9,9 +9,6 @@ import agent from './api/agent';
 import LoadingComponent from './LoadingComponent';
 import { useAppDispatch } from './store/configureStore';
 import {setBasket} from "../../feature/catalog/basket/basketSlice"
-
-
-
 
 
 function App() {
