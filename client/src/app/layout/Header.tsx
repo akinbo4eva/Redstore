@@ -1,6 +1,7 @@
 import { ShoppingCart } from '@mui/icons-material';
 import { AppBar, Badge, Box, IconButton, List, ListItem, Switch, Toolbar, Typography } from '@mui/material'
 import { Link, NavLink } from 'react-router-dom';
+import SignInMenu from './SignInMenu';
 import { useAppSelector } from './store/configureStore';
 
 const midLinks = [
@@ -35,6 +36,7 @@ interface props {
 }
 const Header = ({darkMode, handeleChange}: props) => {
   const {basket} = useAppSelector(state => state.basket);
+  const {user} = useAppSelector(state => state.account);
   const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0 );
   
   return (
@@ -69,18 +71,23 @@ const Header = ({darkMode, handeleChange}: props) => {
                       <ShoppingCart/>
                     </Badge>
               </IconButton>
-              <List sx = {{display: 'flex'}}>
-                {rightLinks.map(({title, path})=>(
-                  <ListItem
-                    component={NavLink}
-                    to={path}
-                    key={path}
-                    sx={navStyles}
-                  >
-                    {title.toUpperCase()}
-                  </ListItem>
-                ))}
-              </List>
+              {user ? (
+                <SignInMenu/>
+              ) : (
+                  <List sx = {{display: 'flex'}}>
+                    {rightLinks.map(({title, path}) => (
+                      <ListItem
+                        component={NavLink}
+                        to={path}
+                        key={path}
+                        sx={navStyles}
+                      >
+                        {title.toUpperCase()}
+                      </ListItem>
+                    ))}
+                  </List>
+              )}
+              
             </Box>
               
         </Toolbar>
