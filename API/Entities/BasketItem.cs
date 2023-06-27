@@ -5,7 +5,7 @@ namespace API.Entities
     [Table("BasketItems")]
     public class BasketItem
     {
-        public int Id{get; set;}
+        public int Id {get; set;}
         public int Quantity {get; set;}
 
         // navigation properties
